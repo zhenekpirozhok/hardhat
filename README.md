@@ -3,8 +3,11 @@
 ## Proxy contract
 
 Proxy contract: ZhekaCoinV1.sol
+
 Deployment script: deployProxyCoin1.ts
+
 Interaction script: interactWithProxy.ts
+
 Output of interaction:
 
 ``` bash
@@ -16,8 +19,11 @@ $ npx hardhat run scripts/interactWithProxy.ts --network sepolia
 💰 Owner balance: 1000050.0 ZHK
 💰 User1 balance: 50.0 ZHK
 ```
+
 Version 2 conract: ZhekaCoinV2.sol
+
 Deployment script: deployProxyCoin2.ts
+
 Output:
 
 ``` bash
@@ -26,6 +32,7 @@ $ npx hardhat run scripts/deployProxyCoin2.ts --network sepolia
 ```
 
 Upgrade script: upgradeToV2.ts
+
 Output:
 
 ``` bash
@@ -35,6 +42,7 @@ $ npx hardhat run scripts/upgradeToV2.ts --network sepolia
 ```
 
 Upgrade validation script: validateUpgrade.ts
+
 Output:
 
 ``` bash
