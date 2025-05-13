@@ -1,5 +1,131 @@
 # Sample Hardhat Project
 
+## Multi-Signature wallet
+
+### 💼 Overview
+
+This is a simple and secure **Multi-Signature Wallet** smart contract built in Solidity. It allows multiple owners to jointly manage and execute transactions with a configurable confirmation threshold. Transactions require approval from multiple authorized signers before execution, providing strong protection against unauthorized actions.
+The solidity contract is stored in **contracts/MultiSigWallet.sol**
+Deployment script - **scripts/deployMultiSig.ts**
+Tests - **test/multisig.test.ts**
+
+---
+
+### 🧠 Design Decisions
+
+#### ✅ Owner Management
+
+* A fixed list of owners is initialized at deployment.
+* The mapping `isOwner[address]` provides efficient access control.
+* Each owner has equal voting power.
+
+#### ✅ Transaction Lifecycle
+
+Each transaction follows this exact flow:
+
+1. **Submission** — An owner proposes a transaction (`to`, `value`, `data`)
+2. **Confirmation** — Other owners approve the transaction
+3. **Execution** — Anyone (not necessarily an owner) can execute after enough confirmations
+4. **Revocation** — Owners can revoke their confirmation prior to execution
+
+This design balances **control and flexibility**, and avoids centralization.
+
+#### ✅ Confirmation Threshold
+
+* The number of required confirmations (`required`) is set during deployment.
+* Must be ≤ number of owners and ≥ 1.
+
+#### ✅ Simplicity and Transparency
+
+* No upgradeable pattern or owner changing logic is included by design.
+* Focus is on clarity, testability, and composability.
+
+---
+
+### ⚙️ Contract Features
+
+| Feature                | Description                                                   |
+| ---------------------- | ------------------------------------------------------------- |
+| `submitTransaction()`  | Propose a new transaction                                     |
+| `confirmTransaction()` | Approve a proposed transaction                                |
+| `revokeConfirmation()` | Remove a previous confirmation                                |
+| `executeTransaction()` | Execute the transaction if approved                           |
+| `getTransaction()`     | Read transaction data                                         |
+| `receive()`            | Accept ETH and log deposit event                              |
+| Events                 | Emits `Submit`, `Confirm`, `Execute`, `Revoke`, and `Deposit` |
+
+---
+
+### 🛠 Usage Instructions
+
+#### 🧪 Local Testing
+
+```bash
+npx hardhat test
+```
+
+Includes tests for:
+
+* Deployment
+* Submission, confirmation, execution
+* Revoke and access control
+* Edge cases (duplicate confirmations, invalid txs)
+
+#### 🧵 Deployment (Example Script)
+
+```ts
+const owners = [
+  "0xYourAccount1",
+  "0xYourAccount2"
+];
+const required = 2;
+
+const factory = await ethers.getContractFactory("MultiSigWallet");
+const wallet = await factory.deploy(owners, required);
+```
+
+#### 💰 Sending ETH
+
+Send ETH directly to the wallet address. It will be stored and used only when transactions are executed.
+
+#### ✍️ Proposing a Transaction
+
+```ts
+await wallet.connect(owner1).submitTransaction(
+  "0xRecipientAddress",
+  ethers.parseEther("1.0"),
+  "0x" // optional data
+);
+```
+
+#### ✅ Confirming
+
+```ts
+await wallet.connect(owner2).confirmTransaction(0);
+```
+
+#### 🔁 Executing
+
+```ts
+await wallet.connect(owner1).executeTransaction(0);
+```
+
+---
+
+### 🔐 Security Analysis
+
+| Area                       | Measures                                                                    |
+| -------------------------- | --------------------------------------------------------------------------- |
+| 🔒 Access Control          | Only `isOwner` addresses can submit/confirm/revoke/execute                  |
+| ⛓️ Confirmation Tracking   | Prevents duplicate confirmations per owner                                  |
+| ✅ Threshold Validation     | Checked at deploy time                                                      |
+| ⚠️ Re-entrancy             | Safe due to `checks-effects-interactions` pattern in `executeTransaction()` |
+| 🧼 Clean State             | Transaction can’t be executed twice                                         |
+| 🔍 Transparency            | Events log all important actions                                            |
+| ❌ No dynamic owner changes | Reduces attack surface                                                      |
+| 🧪 Unit tested             | With Hardhat and Chai assertions                                            |
+
+
 ## Proxy contract
 
 Proxy contract: ZhekaCoinV1.sol
