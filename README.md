@@ -1,5 +1,13 @@
 # Sample Hardhat Project
 
+## 📚 Table of Contents
+
+* [Multi-Signature Wallet](#multi-signature-wallet)
+
+* [Proxy Contract](#proxy-contract)
+
+
+
 ## Multi-Signature wallet
 
 ### 💼 Overview
@@ -124,6 +132,8 @@ await wallet.connect(owner1).executeTransaction(0);
 | 🔍 Transparency            | Events log all important actions                                            |
 | ❌ No dynamic owner changes | Reduces attack surface                                                      |
 | 🧪 Unit tested             | With Hardhat and Chai assertions                                            |
+
+
 
 
 ## Proxy contract
