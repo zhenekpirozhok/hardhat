@@ -6,6 +6,169 @@
 
 * [Proxy Contract](#proxy-contract)
 
+* [Soulbound Visit Card & Game Character NFT Collection](#soulbound-visit-card-&-game-character-nft-collection) 
+
+## Soulbound Visit Card & Game Character NFT Collection
+
+This project contains two smart contracts written in Solidity:
+
+1. **SoulboundVisitCardERC721** – A non-transferable ERC-721 NFT representing a student's personal visit card.
+2. **GameCharacterCollectionERC1155** – A multi-token ERC-1155 collection of 10 unique game character NFTs with batch minting and transfer capabilities.
+
+---
+
+### 📚 Learning Goals
+
+- Understand the difference between ERC-721 and ERC-1155.
+- Learn how to implement soulbound (non-transferable) NFTs.
+- Manage batch operations and metadata in ERC-1155.
+- Store metadata and images using IPFS.
+- Apply smart contract security and access control patterns.
+
+---
+
+### 🛠️ Project Structure
+
+```
+
+contracts/
+│   SoulboundVisitCardERC721.sol
+│   GameCharacterCollectionERC1155.sol
+scripts/
+│   deployStudentVisitCard.ts
+│   deployCharacters.ts 
+test/
+│   characters.test.ts
+│   studentcard.test.ts
+metadata/game_characters
+│   0.json ... 9.json       ← IPFS metadata
+
+````
+
+---
+
+### 🔧 Requirements
+
+- Node.js >= 16
+- Hardhat
+- TypeScript
+- IPFS account (e.g. Web3.Storage)
+
+Install dependencies:
+
+```bash
+npm install
+````
+
+Compile contracts:
+
+```bash
+npx hardhat compile
+```
+
+---
+
+### 🚀 Deployment
+
+#### 1. SoulboundVisitCardERC721
+
+This contract is not transferable after minting.
+
+```solidity
+function mint(address to, string memory tokenURI) external onlyOwner;
+```
+
+Deployment:
+
+```bash
+npx hardhat run scripts/deployStudentVisitCard.ts --network sepolia
+```
+
+### 2. GameCharacterCollectionERC1155
+
+```ts
+const baseURI = "ipfs://bafybeiffbhpv6k6bnlzeffg6px7hkwr5q4wgrrz5kzgwwmu2k3squuhrjq/";
+await contract.setTokenURI(0, baseURI + "0.json");
+```
+
+Deployment:
+
+```bash
+npx hardhat run scripts/deployCharacters.ts --network sepolia
+```
+
+---
+
+### 🧪 Testing
+
+Run full test suite (ERC-721 + ERC-1155):
+
+```bash
+npx hardhat test
+```
+
+---
+
+### 🖼️ Metadata & IPFS
+
+Each NFT (ERC-721 and ERC-1155) must have:
+
+* `name`, `description`
+* `image` hosted on IPFS
+* Attributes (`speed`, `color`, `strength`, etc.)
+
+Metadata example (`0.json`):
+
+```json
+{
+  "name": "Red Kitty",
+  "description": "A fearless red cat warrior with blazing speed.",
+  "image": "ipfs://Qm.../0.png",
+  "attributes": [
+    { "trait_type": "Color", "value": "Red" },
+    { "trait_type": "Speed", "value": 9 },
+    { "trait_type": "Strength", "value": 5 },
+    { "trait_type": "Rarity", "value": "Epic" }
+  ]
+}
+```
+
+Upload folder via [web3.storage](https://web3.storage):
+
+```bash
+web3.storage put metadata --token=YOUR_TOKEN
+```
+
+---
+
+### 📸 Proof of Functionality
+
+#### ✅ Soulbound ERC-721
+
+Contract creation transaction: https://sepolia.etherscan.io/tx/0x61f9b59ad40de3e613e55606d627d01977dc37bd963af13b38d694f207b7ee0e
+
+Mint transaction: https://sepolia.etherscan.io/tx/0x895e2250d7b27cf315061899e00f1fcce1473ea2ecb1202b98f9b8d39b32be3d
+
+![изображение](https://github.com/user-attachments/assets/27e94ea4-f195-40f9-8d2c-e2022af3c737)
+
+the script can be found in scripts/proof721.ts
+
+
+#### ✅ Game Character ERC-1155
+
+Contract creation: https://sepolia.etherscan.io/tx/0x31a70c4d5d6dfd521f3ccb4f98e7febb859086cdf489b77c040a26c30728990c
+
+![изображение](https://github.com/user-attachments/assets/4ac4f2c5-2008-4779-a9da-0dd39ee3afa2)
+
+the script can be found in scripts/proof1155.ts
+
+---
+
+### 🔐 Security
+
+* `onlyOwner` used for minting and admin actions
+* Soulbound NFT disables all transfer/approval logic
+* ERC-1155 uses batch-safe mint and transfer
 
 
 ## Multi-Signature wallet
