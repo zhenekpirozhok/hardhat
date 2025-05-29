@@ -1,0 +1,10 @@
+{
+  "name": "Yauheniya Kavalchuk",
+  "description": "Student Visit Card - Blockchain Course 2025",
+"image": "ipfs://bafybeiglwosz3dudtqfjkmkkj7w2vkmyeop4s7pzkeieb5jhqai7oak2n4/me.jfif",
+  "attributes": [
+    { "trait_type": "Student ID", "value": "S123456" },
+    { "trait_type": "Course", "value": "Blockchain Dev" },
+    { "trait_type": "Year", "value": "2025" }
+  ]
+}
