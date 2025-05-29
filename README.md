@@ -6,7 +6,7 @@
 
 * [Proxy Contract](#proxy-contract)
 
-* [Soulbound Visit Card & Game Character NFT Collection](#soulbound-visit-card-&-game-character-nft-collection) 
+* [Soulbound Visit Card & Game Character NFT Collection](#soulbound-visit-card--game-character-nft-collection) 
 
 ## Soulbound Visit Card & Game Character NFT Collection
 
