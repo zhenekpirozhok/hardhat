@@ -1,0 +1,23 @@
+{
+  "name": "Squirtle",
+  "description": "A water-type Pok\u00e9mon with a strong shell and big heart.",
+  "image": "ipfs://bafybeigcanwaok5zk7jktbbmhbdonmly7us73vv57rs44n4qns5nwzjeju/squirtle.jpg",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "Water"
+    },
+    {
+      "trait_type": "Speed",
+      "value": 7
+    },
+    {
+      "trait_type": "Power",
+      "value": 8
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Common"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "Gengar",
+  "description": "A ghost-type Pok\u00e9mon with a mischievous smile.",
+  "image": "ipfs://bafybeibfcqzrpofsxiuycvn7g33nek72tcuyxty2dzdy2erqfxikfbbjs4/gengar.webp",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "Ghost"
+    },
+    {
+      "trait_type": "Speed",
+      "value": 5
+    },
+    {
+      "trait_type": "Power",
+      "value": 6
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Common"
+    }
+  ]
+}

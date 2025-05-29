@@ -1,0 +1,23 @@
+{
+  "name": "Bulbasaur",
+  "description": "A grass-type Pok\u00e9mon with a bulb on its back.",
+  "image": "ipfs://bafybeidsqhab6gdkxxvi6ajlf2srf3gihqmytffmq3he4iu52wjitwbtzi/bulbasaur.jpg",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "Grass"
+    },
+    {
+      "trait_type": "Speed",
+      "value": 6
+    },
+    {
+      "trait_type": "Power",
+      "value": 10
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Epic"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "Pikachu",
+  "description": "An electric-type Pok\u00e9mon known for its lightning bolt tail.",
+  "image": "ipfs://bafybeie4pmdbuftjcpeiqstp4boxocv4m3dk25kanmgwo5bbfhksyx4hyy/pikachu.jpg",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "Electric"
+    },
+    {
+      "trait_type": "Speed",
+      "value": 10
+    },
+    {
+      "trait_type": "Power",
+      "value": 6
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Legendary"
+    }
+  ]
+}

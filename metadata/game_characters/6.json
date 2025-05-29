@@ -1,0 +1,23 @@
+{
+  "name": "Meowth",
+  "description": "A mischievous feline Pok\u00e9mon with a love for coins.",
+  "image": "ipfs://bafybeic2argncn2zmaaseluxaznrpyiwihj33wipbterbestmvr3bx52mm/meowth.webp",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "Dark"
+    },
+    {
+      "trait_type": "Speed",
+      "value": 5
+    },
+    {
+      "trait_type": "Power",
+      "value": 9
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Legendary"
+    }
+  ]
+}

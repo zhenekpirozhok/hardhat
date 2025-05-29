@@ -8,8 +8,8 @@ async function main() {
     const Soulbound = await ethers.getContractFactory("SoulboundVisitCardERC721");
     const soulbound = await Soulbound.deploy();
 
-    await soulbound.deployed();
-    console.log("SoulboundVisitCardERC721 deployed to:", soulbound.address);
+    await soulbound.waitForDeployment();
+    console.log("SoulboundVisitCardERC721 deployed to: ", await soulbound.getAddress());
 
     const yourAddress = deployer.address;
     const tokenURI = "ipfs://bafybeic5sibu6lkd6y65uursvrjpmlql3aoyjgimrumbjpzmfltxbtruxq/student_zhenya.json";

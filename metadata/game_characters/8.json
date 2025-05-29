@@ -1,0 +1,23 @@
+{
+  "name": "Snorlax",
+  "description": "A massive Pok\u00e9mon that loves to sleep and eat.",
+  "image": "ipfs://bafybeichuckectzohyybbc5hwqzznwcz7fhza62mhpvqoh3sfiifn57aou/snorlax.webp",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "Normal"
+    },
+    {
+      "trait_type": "Speed",
+      "value": 5
+    },
+    {
+      "trait_type": "Power",
+      "value": 5
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Uncommon"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "Psyduck",
+  "description": "A water-type Pok\u00e9mon often lost in thought.",
+  "image": "ipfs://bafybeihkjv5tisp6zb4nai4km2fypagzbug3gchnvr55ajlv6rkneafjhi/psyduck.jpg",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "Psychic"
+    },
+    {
+      "trait_type": "Speed",
+      "value": 5
+    },
+    {
+      "trait_type": "Power",
+      "value": 10
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Legendary"
+    }
+  ]
+}

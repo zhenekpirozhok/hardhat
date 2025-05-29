@@ -1,0 +1,23 @@
+{
+  "name": "Eevee",
+  "description": "An adaptable Pok\u00e9mon with potential to evolve in many ways.",
+  "image": "ipfs://bafybeicwm3u6a534o4ukjhj3zitrfckcqexr35nfho7evmzgymbi27fkgq/eevee.jpg",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "Normal"
+    },
+    {
+      "trait_type": "Speed",
+      "value": 9
+    },
+    {
+      "trait_type": "Power",
+      "value": 7
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Legendary"
+    }
+  ]
+}
